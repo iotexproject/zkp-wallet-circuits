@@ -1,0 +1,8 @@
+{
+  "name": "account-abstraction-circom",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "circomlib": "^2.0.5"
+  }
+}
