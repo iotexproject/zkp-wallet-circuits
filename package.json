@@ -3,14 +3,26 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
+    "chai": "^4.3.7",
     "circomlib": "^2.0.5",
-    "rimraf": "^4.1.2"
+    "ethers": "^6.0.8",
+    "mocha": "^10.2.0",
+    "rimraf": "^4.1.2",
+    "snarkjs": "^0.6.4"
   },
   "scripts": {
     "clean": "rimraf passport_cpp passport_js passport.r1cs passport.sym *.zkey *.ptau verification_key.json input.json witness.wtns proof.json public.json verifier.sol",
     "precompile": "yarn clean",
     "compile": "circom circuits/passport.circom --r1cs --wasm --sym --c",
     "setup": "./scripts/setup.sh",
-    "gen-verifier": "./scripts/gen_verifier.sh"
+    "gen-verifier": "./scripts/gen_verifier.sh",
+    "test": "mocha -r ts-node/register test/*.spec.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.14.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   }
 }
