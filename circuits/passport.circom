@@ -4,8 +4,8 @@ include "../node_modules/circomlib/circuits/poseidon.circom";
 
 template Passport() {
     signal input addr;
-    signal input secret;
     signal input nonce;
+    signal input secret;
     signal output hash;
 
     component hasher = Poseidon(3);
@@ -16,4 +16,4 @@ template Passport() {
     hash <== hasher.out;
 }
 
-component main = Passport();
+component main {public [addr, nonce]} = Passport();
