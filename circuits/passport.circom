@@ -8,10 +8,8 @@ template Passport() {
     signal input secret;
     signal output hash;
 
-    component hasher = Poseidon(3);
-    hasher.inputs[0] <== addr;
-    hasher.inputs[1] <== nonce;
-    hasher.inputs[2] <== secret;
+    component hasher = Poseidon(1);
+    hasher.inputs[0] <== addr + nonce + secret;
 
     hash <== hasher.out;
 }

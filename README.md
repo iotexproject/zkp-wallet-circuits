@@ -31,7 +31,7 @@ snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First con
 # Phase 2
 snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v
 snarkjs groth16 setup passport.r1cs pot12_final.ptau passport_0000.zkey
-snarkjs zkey contribute passport_0000.zkey passport_0001.zkey --name="1st Contributor Name" -v
+snarkjs zkey contribute passport_0000.zkey passport_0001.zkey --name="Second Contributor" -v
 
 # Export verfication key
 snarkjs zkey export verificationkey passport_0001.zkey verification_key.json
@@ -53,4 +53,8 @@ snarkjs groth16 verify verification_key.json public.json proof.json
 
 ```
 snarkjs zkey export solidityverifier passport_0001.zkey verifier.sol
+
+# generate contract call data
+snarkjs zkey export soliditycalldata public.json proof.json
+snarkjs zkesc public.json proof.json
 ```
