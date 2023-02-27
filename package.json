@@ -10,6 +10,7 @@
     "clean": "rimraf passport_cpp passport_js passport.r1cs passport.sym *.zkey *.ptau verification_key.json input.json witness.wtns proof.json public.json verifier.sol",
     "precompile": "yarn clean",
     "compile": "circom circuits/passport.circom --r1cs --wasm --sym --c",
-    "setup": "./scripts/setup.sh"
+    "setup": "./scripts/setup.sh",
+    "gen-verifier": "./scripts/gen_verifier.sh"
   }
 }
