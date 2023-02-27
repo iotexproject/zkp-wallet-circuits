@@ -1,8 +1,13 @@
 Account Abstraction Circom
 ==========================
 
-## Compile
+## Compile circuit
 
 ```
-circom src/passport.circom --r1cs --wasm --sym --c
+circom circuits/passport.circom --r1cs --wasm --sym --c
+```
+
+## Compute witness
+
+```
 ```
