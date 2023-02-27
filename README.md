@@ -39,7 +39,7 @@ snarkjs zkey export verificationkey passport_0001.zkey verification_key.json
 
 ## Proof
 
-### Offline
+### Off-chain
 
 ```
 # Generate proof
