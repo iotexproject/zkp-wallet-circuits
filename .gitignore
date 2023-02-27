@@ -6,3 +6,8 @@ passport.sym
 *.zkey
 *.ptau
 verification_key.json
+input.json
+witness.wtns
+proof.json
+public.json
+verifier.sol

@@ -14,6 +14,13 @@ snarkjs info -r passport.r1cs
 snarkjs r1cs print passport.r1cs passport.sym
 ```
 
+## Calculate witness
+
+```
+# snarkjs calculatewitness --wasm ./passport_js/passport.wasm --input input.json
+node ./passport_js/generate_witness.js ./passport_js/passport.wasm input.json witness.wtns
+```
+
 ## Trusted setup (Groth16)
 
 ```
@@ -30,7 +37,20 @@ snarkjs zkey contribute passport_0000.zkey passport_0001.zkey --name="1st Contri
 snarkjs zkey export verificationkey passport_0001.zkey verification_key.json
 ```
 
-## Compute witness
+## Proof
+
+### Offline
 
 ```
+# Generate proof
+snarkjs groth16 prove passport_0001.zkey witness.wtns proof.json public.json
+
+# Verify proof
+snarkjs groth16 verify verification_key.json public.json proof.json
+```
+
+### Contract
+
+```
+snarkjs zkey export solidityverifier passport_0001.zkey verifier.sol
 ```
