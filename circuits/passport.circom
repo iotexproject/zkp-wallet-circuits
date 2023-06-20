@@ -3,14 +3,13 @@ pragma circom 2.0.0;
 include "../node_modules/circomlib/circuits/poseidon.circom";
 
 template Passport() {
-    signal input addr;
     signal input nonce;
     signal input secret;
     signal input op;
     signal output hashes[2];
 
     component passHasher = Poseidon(1);
-    passHasher.inputs[0] <== addr + nonce + secret;
+    passHasher.inputs[0] <== nonce + secret;
 
     hashes[0] <== passHasher.out;
 
@@ -21,4 +20,4 @@ template Passport() {
     hashes[1] <== opHasher.out;
 }
 
-component main {public [addr, nonce, op]} = Passport();
+component main {public [nonce, op]} = Passport();
