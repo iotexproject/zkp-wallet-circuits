@@ -8,7 +8,7 @@
     "ethers": "^6.0.8",
     "mocha": "^10.2.0",
     "rimraf": "^4.1.2",
-    "snarkjs": "^0.6.4"
+    "snarkjs": "^0.7.0"
   },
   "scripts": {
     "clean": "rimraf passport_cpp passport_js passport.r1cs passport.sym *.zkey *.ptau verification_key.json input.json witness.wtns proof.json public.json verifier.sol",
